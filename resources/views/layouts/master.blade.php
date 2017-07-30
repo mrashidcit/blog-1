@@ -43,11 +43,6 @@
                 </li>
                 <li>
                     <a href="#">Contact</a>
-                </li><li>
-                    <a href="{{route('create')}}">Create Post</a>
-                </li>
-                <li>
-                    <a href="{{route('category')}}">Catogry</a>
                 </li>
             </ul>
         </div>
@@ -64,10 +59,6 @@
         @yield('pageContent')
 
 
-        <!-- Blog Sidebar Widgets Column -->
-        @section('rightBar')
-            @include('layouts.side-widgets')
-        @show
     </div>
 
 

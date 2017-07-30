@@ -8,40 +8,31 @@
 namespace App\Http\Controllers;
 
 
-use App\Category;
+
 use app\Http\Requests\Request;
-use App\Post;
+
+
 class HomeController extends Controller
 {
 
-    private $post;
 
     /**
      * HomeController constructor.
      * @param $post
+     *
      */
-    public function __construct(Post $post)
-    {
-        $this->post = $post;
-    }
+
+
 
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(){
-        $posts = $this->post->fetchPosts();
-        return view('home.index',['posts' => $posts]);
+        return view('student.create');
     }
 
-    public function searchPosts(Request $request){
 
-        $searchKey = $request->get('searchKey',null);
-        $posts = null;
-        $params['searchKey'] = $searchKey;
-        $posts = $this->post->fetchPosts($params);
-        return view('home.index',['posts' => $posts]);
-    }
 
 
 }
